@@ -1,3 +1,30 @@
+    def request_file(self):
+        global rrq
+        rrq = bytearray()
+        rrq.append(0)
+        rrq.append(1)
+        filename = b'rodaina'
+        rrq = rrq + filename
+        rrq.append(0)
+        mode = b'octet'
+        rrq = rrq + mode
+
+
+    def upload_file(self):
+
+        #sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        #server_address = ("127.0.0.1", 69)
+        global wrq
+        wrq= bytearray()
+        wrq.append(0)
+        wrq.append(2)
+        filename=b'rodaina'
+        wrq=wrq+filename
+        wrq.append(0)
+        mode=b'octet'
+        wrq=wrq+mode
+
+
 def main():
 
     # Create a UDP socket
